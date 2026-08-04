@@ -1,17 +1,19 @@
-# mcp-maven-central
+# @pipeworx/maven-central
 
-Maven Central MCP — Java/JVM artifact registry
+Maven Central MCP — Java/JVM artifact search (~12M artifacts). No auth.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search` | Full-text search across groupId, artifactId, version, tags. |
-| `search_by_coords` | Structured lookup by Maven coordinates. Provide any combination of groupId / artifactId / version. |
-| `list_versions` | All published versions for a given (groupId, artifactId). |
-| `latest_version` | Most recent release version of (groupId, artifactId). |
+- `search(query, rows?, start?)` — full-text across groupId/artifactId/version
+- `search_by_coords(group_id?, artifact_id?, version?, rows?, start?)` — structured lookup
+- `list_versions(group_id, artifact_id, rows?)`
+- `latest_version(group_id, artifact_id)`
+
+## Data source
+
+`https://search.maven.org/solrsearch/select` — Solr-backed JSON API.
 
 ## Quick Start
 
@@ -27,7 +29,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -51,7 +53,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
