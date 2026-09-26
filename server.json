@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/maven-central",
   "title": "Maven Central",
   "description": "Maven Central MCP — Java/JVM artifact registry",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://pipeworx.io/packs/maven-central",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-maven-central",
