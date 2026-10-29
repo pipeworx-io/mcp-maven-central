@@ -1,0 +1,97 @@
+[
+  {
+    "name": "search",
+    "description": "Full-text search across Maven Central packages by groupId, artifactId, version, or tags. Returns artifact coordinates, latest version, and download timestamps for up to 200 matches.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Free-text query"
+        },
+        "rows": {
+          "type": "number",
+          "description": "Max rows, 1-200 (default 20)"
+        },
+        "start": {
+          "type": "number",
+          "description": "0-based offset"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "search_by_coords",
+    "description": "Structured lookup by Maven coordinates. Provide any combination of groupId / artifactId / version.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "group_id": {
+          "type": "string",
+          "description": "groupId — e.g. \"org.springframework\""
+        },
+        "artifact_id": {
+          "type": "string",
+          "description": "artifactId — e.g. \"spring-core\""
+        },
+        "version": {
+          "type": "string",
+          "description": "version"
+        },
+        "rows": {
+          "type": "number",
+          "description": "1-200 (default 20)"
+        },
+        "start": {
+          "type": "number",
+          "description": "0-based offset"
+        }
+      }
+    }
+  },
+  {
+    "name": "list_versions",
+    "description": "List all published versions of a Maven artifact identified by groupId and artifactId, with release timestamps, using the Maven Central Solr GAV core.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "group_id": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "number",
+          "description": "1-200 (default 200)"
+        }
+      },
+      "required": [
+        "group_id",
+        "artifact_id"
+      ]
+    }
+  },
+  {
+    "name": "latest_version",
+    "description": "Most recent release version of (groupId, artifactId).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "group_id": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "group_id",
+        "artifact_id"
+      ]
+    }
+  }
+]
