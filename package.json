@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-maven-central",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Maven Central MCP — Java/JVM artifact registry",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "maven-central",
     "gatewaySlug": "maven-central",
-    "sourceHash": "v1-87b91cff3ba87c43ffa648d2ab70e315e4b920a03d8d9336462c6d3b2aef5e48",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-d863f6a758294a43a875c46df65310da017ee247c3cc4980d6f857d6536b191f",
+    "sourceCommit": "56cf550e46fed96c0101a3877ccaf8357eecf016"
   }
 }
